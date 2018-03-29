@@ -26,11 +26,14 @@ typedef struct	s_players
 }		t_players;
 
 int		**set_map(t_players *p);
+int		**set_all(char **av, t_players *p);
+int		**move_player(int **map, t_players *p);
 int		parser(int ac, char **av);
-int		set_all(char **av);
 int		create_semaphores(t_players *p);
 int		players_on_map(t_players *p, int **map);
+int		launch_game(int **map, t_players *p);
 void		flag_help(char **av);
+void		my_showtab(int **map);
 t_players	*create_players(char **av);
 
 #endif /* !LEMIPC_H_ */

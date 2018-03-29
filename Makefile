@@ -22,6 +22,8 @@ SRCS	= src/flag_help.c		\
 	  src/set_all.c			\
 	  src/create_semaphores.c	\
 	  src/players_on_map.c		\
+	  src/launch_game.c		\
+	  src/move_player.c		\
           main.c
 
 OBJS	= $(SRCS:.c=.o)
