@@ -7,14 +7,32 @@
 
 #include <sys/types.h>
 #include <sys/ipc.h>
+#include <unistd.h>
 #include "lemipc.h"
 
-int		main(int ac, char **av)
+void			my_showtab(int **map)
+{
+	int		x = 0;
+	int		y = 0;
+
+	while (map[x]) {
+		while (map[x][y]) {
+			printf("%d", map[x][y]);
+			y++;
+		}
+		printf("\n");
+		y = 0;
+		x++;
+	}
+}
+
+int			main(int ac, char **av)
 {
 	if (parser(ac, av) == -1) {
 		flag_help(av);
 	}
-	if (create_players(av) == -1)
+	if (set_all(av) == -1) {
 		return (-1);
+	}
 	return (0);
 }

@@ -17,18 +17,20 @@ int			init_players(t_players *p, char **av)
 		return (-1);
 	p->player_name = av[1];
 	p->team_id = atoi(av[2]);
-	p->key = ftok(av[0], 0);
+	p->key = ftok(av[1], 0);
+	if (p->key == -1)
+		return (-1);
 	return (0);
 }
 
-int			create_players(char **av)
+t_players		*create_players(char **av)
 {
-	t_players	*p;
+	t_players	*p = NULL;
 
 	p = malloc(sizeof(t_players));
 	if (p == NULL)
-		return (-1);
+		return (NULL);
 	if (init_players(p, av) != 0)
-		return (-1);
-	return (0);
+		return (NULL);
+	return (p);
 }
