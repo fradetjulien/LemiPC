@@ -13,7 +13,6 @@
 int		is_free(t_players *p, int **map)
 {
 	if (map[p->abscissa][p->orderly] == 0) {
-		map[p->abscissa][p->orderly] = p->sem_id;
 		return (0);
 	}
 	return (-1);
@@ -21,12 +20,13 @@ int		is_free(t_players *p, int **map)
 
 int		players_on_map(t_players *p, int **map)
 {
-	if (is_free(p, map) == -1) {
-		while (is_free(p, map) == -1) {
-			srand(time(NULL));
-			p->abscissa = rand() % HEIGHT_MAP;
-			p->orderly = rand() % WIDTH_MAP;
-		}
+	while (is_free(p, map) == -1) {
+		srand(time(NULL));
+		p->abscissa = rand() % HEIGHT_MAP;
+		p->orderly = rand() % WIDTH_MAP;
+	}
+	if (is_free(p, map) == 0) {
+		map[p->abscissa][p->orderly] = p->team_id;
 	}
 	return (0);
 }

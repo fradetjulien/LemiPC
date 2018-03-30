@@ -6,6 +6,7 @@
 */
 
 #include "lemipc.h"
+#include <unistd.h>
 
 int		**delete_position(int **map, t_players *p)
 {
@@ -21,7 +22,7 @@ int		alive_players(int **map)
 	int	orderly = 0;
 	int	nb_players = 0;
 
-	while (map[abscissa]) {
+	while (abscissa < HEIGHT_MAP) {
 		while (map[abscissa][orderly]) {
 			if (map[abscissa][orderly] != 0) {
 				nb_players++;
@@ -42,7 +43,8 @@ int		launch_game(int **map, t_players *p)
 	while (time <= 60 && nb_players > 0) {
 		nb_players = alive_players(map);
 		map = delete_position(map, p);
-		map = move_player(map, p);
+		map = browse_map(map);
+		time++;
 	}
 	return (0);
 }

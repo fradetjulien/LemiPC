@@ -13,15 +13,15 @@
 
 int		**initialisation_map(void *map)
 {
-	int	**real_map = malloc(sizeof(int *) * (HEIGHT_MAP * WIDTH_MAP));
+	int	**real_map = malloc(sizeof(int *) * (HEIGHT_MAP));
 	int	abscissa = 0;
 	int	orderly = 0;
 
 	if (real_map == NULL)
 		return (NULL);
 	while (abscissa < WIDTH_MAP) {
-                real_map[abscissa] = &((int *)map)[HEIGHT_MAP * abscissa];
-	        abscissa++;
+		real_map[abscissa] = &((int *)map)[HEIGHT_MAP * abscissa];
+		abscissa++;
 	}
 	abscissa = 0;
 	while (abscissa < HEIGHT_MAP) {
@@ -38,7 +38,7 @@ int		**initialisation_map(void *map)
 int		**fillup_map(void *map)
 {
 	int	abscissa = 0;
-	int	**real_map = malloc(sizeof(int *) * (HEIGHT_MAP * WIDTH_MAP));
+	int	**real_map = malloc(sizeof(int *) * (HEIGHT_MAP));
 
 	if (real_map == NULL)
 		return (NULL);

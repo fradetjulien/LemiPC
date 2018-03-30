@@ -24,6 +24,9 @@ SRCS	= src/flag_help.c		\
 	  src/players_on_map.c		\
 	  src/launch_game.c		\
 	  src/move_player.c		\
+	  src/my_showtab.c		\
+	  src/browse_map.c		\
+	  src/shifting.c		\
           main.c
 
 OBJS	= $(SRCS:.c=.o)
