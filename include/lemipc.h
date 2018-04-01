@@ -38,12 +38,12 @@ int		lock(int sem_id);
 int		unlock(int sem_id);
 void		flag_help(char **av);
 void		my_showtab(int **map);
-void		shifting_zero(int **map, int abscissa, int orderly, int player);
-void		shifting_one(int **map, int abscissa, int orderly, int player);
-void		shifting_two(int **map, int abscissa, int orderly, int player);
-void		shifting_three(int **map, int abscissa, int orderly, int player);
-void		shifting_four(int **map, int abscissa, int orderly, int player);
-void		shifting_five(int **map, int abscissa, int orderly, int player);
+void		shifting_zero(int ***map, int abscissa, int orderly, int player);
+void		shifting_one(int ***map, int abscissa, int orderly, int player);
+void		shifting_two(int ***map, int abscissa, int orderly, int player);
+void		shifting_three(int ***map, int abscissa, int orderly, int player);
+void		shifting_four(int ***map, int abscissa, int orderly, int player);
+void		shifting_five(int ***map, int abscissa, int orderly, int player);
 void		end(t_players *p);
 t_players	*create_players(char **av, t_players *p);
 

@@ -11,7 +11,7 @@
 
 int		**move_player(int **map, int abscissa, int orderly)
 {
-	void	(*ptrf[6])(int **, int, int, int);
+	void	(*ptrf[6])(int ***, int, int, int);
 	char	*possibility = "012345";
 	int	player = 0;
 	int	move = 0;
@@ -29,6 +29,6 @@ int		**move_player(int **map, int abscissa, int orderly)
 	ptrf[5] = &shifting_five;
 	while(possibility[++i] != move && possibility[i]);
 	if (move == possibility[i])
-		ptrf[i](map, abscissa, orderly, player);
+		ptrf[i](&map, abscissa, orderly, player);
 	return (map);
 }

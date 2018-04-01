@@ -22,6 +22,5 @@ int			**set_all(char **av, t_players *p)
 	if (launch_game(map, p) == -1) {
                 return (NULL);
 	}
-	my_showtab(map);
 	return (map);
 }

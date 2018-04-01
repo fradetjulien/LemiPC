@@ -41,16 +41,17 @@ int			alive_players(int **map)
 
 int			launch_game(int **map, t_players *p)
 {
-	int		time = 0;
 	int		nb_players = 2;
 	struct shmid_ds	remaining_players;
 
-	while (time <= 60 && nb_players > 1) {
+	while (nb_players > 1) {
 		nb_players = alive_players(map);
 		map = delete_position(map, p);
+		lock(p->sem_id);
 		map = browse_map(map);
-		time++;
+		unlock(p->sem_id);
 	}
+	my_showtab(map);
 	shmctl(p->shm_id, IPC_STAT, &remaining_players);
 	if (remaining_players.shm_nattch < 3)
 		end(p);
