@@ -7,27 +7,39 @@
 
 #include "lemipc.h"
 
-void		shifting_zero(int ***map, int abscissa, int orderly, int player)
+int		**shifting_zero(int **map, t_players *p, int player)
 {
-	if (orderly < WIDTH_MAP &&
-	    (*map)[abscissa][orderly] == 0) {
-		orderly++;
+	if (p->orderly < WIDTH_MAP &&
+	    map[p->abscissa][p->orderly] == 0) {
+		p->orderly++;
 	}
-	(*map)[abscissa][orderly] = player;
+	map[p->abscissa][p->orderly] = player;
+	return (map);
 }
 
-void		shifting_one(int ***map, int abscissa, int orderly, int player)
+int		**shifting_one(int **map, t_players *p, int player)
 {
-	if (abscissa < (HEIGHT_MAP - 1)) {
-		abscissa++;
+	if (p->abscissa < (HEIGHT_MAP - 1)) {
+		p->abscissa++;
 	}
-	(*map)[abscissa][orderly] = player;
+	map[p->abscissa][p->orderly] = player;
+	return (map);
 }
 
-void		shifting_two(int ***map, int abscissa, int orderly, int player)
+int		**shifting_two(int **map, t_players *p, int player)
 {
-	if (orderly > 0) {
-		orderly--;
+	if (p->orderly > 0) {
+		p->orderly--;
 	}
-	(*map)[abscissa][orderly] = player;
+	map[p->abscissa][p->orderly] = player;
+	return (map);
+}
+
+int		**shifting_three(int **map, t_players *p, int player)
+{
+        if (p->abscissa > 0) {
+                p->abscissa--;
+        }
+        map[p->abscissa][p->orderly] = player;
+	return (map);
 }

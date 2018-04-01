@@ -35,8 +35,12 @@ typedef struct	s_players
 
 int		**set_map(t_players *p);
 int		**set_all(char **av, t_players *p);
-int		**move_player(int **map, int abscissa, int orderly);
-int		**browse_map(int **map);
+int		**move_player(int **map, t_players *p);
+int		**browse_map(int **map, t_players *p);
+int		**shifting_zero(int **map, t_players *p, int player);
+int		**shifting_one(int **map, t_players *p, int player);
+int		**shifting_two(int **map, t_players *p, int player);
+int		**shifting_three(int **map, t_players *p, int player);
 int		parser(int ac, char **av);
 int		create_semaphores(t_players *p);
 int		players_on_map(t_players *p, int **map);
@@ -45,12 +49,6 @@ int		lock(int sem_id);
 int		unlock(int sem_id);
 void		flag_help(char **av);
 void		my_showtab(int **map);
-void		shifting_zero(int ***map, int abscissa, int orderly, int player);
-void		shifting_one(int ***map, int abscissa, int orderly, int player);
-void		shifting_two(int ***map, int abscissa, int orderly, int player);
-void		shifting_three(int ***map, int abscissa, int orderly, int player);
-void		shifting_four(int ***map, int abscissa, int orderly, int player);
-void		shifting_five(int ***map, int abscissa, int orderly, int player);
 void		end(t_players *p);
 t_players	*create_players(char **av, t_players *p);
 

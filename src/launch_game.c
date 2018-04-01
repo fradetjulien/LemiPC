@@ -45,8 +45,9 @@ int			launch_game(int **map, t_players *p)
 		nb_players = alive_players(map);
 		map = delete_position(map, p);
 		lock(p->sem_id);
-		map = browse_map(map);
+		map = move_player(map, p);
 		unlock(p->sem_id);
+		usleep(3000);
 	}
 	my_showtab(map);
 	shmctl(p->shm_id, IPC_STAT, &remaining_players);
