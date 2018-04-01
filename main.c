@@ -17,6 +17,7 @@ int			main(int ac, char **av)
 
 	if (parser(ac, av) == -1) {
 		flag_help(av);
+		return (-1);
 	}
 	map = set_all(av, p);
 	if (map == NULL) {

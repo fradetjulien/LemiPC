@@ -44,6 +44,7 @@ void		shifting_two(int **map, int abscissa, int orderly, int player);
 void		shifting_three(int **map, int abscissa, int orderly, int player);
 void		shifting_four(int **map, int abscissa, int orderly, int player);
 void		shifting_five(int **map, int abscissa, int orderly, int player);
+void		end(t_players *p);
 t_players	*create_players(char **av, t_players *p);
 
 #endif /* !LEMIPC_H_ */
