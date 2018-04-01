@@ -6,9 +6,6 @@
 */
 
 #include "lemipc.h"
-#include <time.h>
-#include <unistd.h>
-#include <stdlib.h>
 
 int		is_free(t_players *p, int **map)
 {

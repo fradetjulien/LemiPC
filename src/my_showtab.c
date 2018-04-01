@@ -5,7 +5,6 @@
 ** my_showtab.c
 */
 
-#include <stdio.h>
 #include "lemipc.h"
 
 void		my_showtab(int **map)

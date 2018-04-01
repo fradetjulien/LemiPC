@@ -6,9 +6,6 @@
 */
 
 #include "lemipc.h"
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
 
 t_players		*init_players(t_players *p, char **av)
 {

@@ -5,9 +5,7 @@
 ** parser.c
 */
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
+#include "lemipc.h"
 
 int			is_num(char *number)
 {

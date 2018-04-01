@@ -6,7 +6,6 @@
 */
 
 #include "lemipc.h"
-#include <unistd.h>
 
 int			**set_all(char **av, t_players *p)
 {

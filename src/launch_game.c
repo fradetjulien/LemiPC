@@ -6,9 +6,6 @@
 */
 
 #include "lemipc.h"
-#include <sys/ipc.h>
-#include <sys/shm.h>
-#include <unistd.h>
 
 int			**delete_position(int **map, t_players *p)
 {

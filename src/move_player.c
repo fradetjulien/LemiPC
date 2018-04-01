@@ -6,8 +6,6 @@
 */
 
 #include "lemipc.h"
-#include <time.h>
-#include <stdlib.h>
 
 int		**move_player(int **map, int abscissa, int orderly)
 {

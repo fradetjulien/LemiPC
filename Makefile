@@ -9,7 +9,7 @@ CC	= gcc
 
 RM	= rm -f
 
-CFLAGS	= -g -W -Wall -Wextra -pthread
+CFLAGS	= -g -W -Wall -Wextra
 
 CFLAGS  += -I include/
 
@@ -27,10 +27,11 @@ SRCS	= src/flag_help.c		\
 	  src/my_showtab.c		\
 	  src/browse_map.c		\
 	  src/shifting.c		\
+	  src/last_shifting.c		\
 	  src/lock.c			\
 	  src/unlock.c			\
 	  src/end.c			\
-          main.c
+	  src/main.c
 
 OBJS	= $(SRCS:.c=.o)
 

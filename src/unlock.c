@@ -6,7 +6,6 @@
 */
 
 #include "lemipc.h"
-#include <sys/sem.h>
 
 int			unlock(int sem_id)
 {

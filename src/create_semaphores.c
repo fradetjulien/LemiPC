@@ -6,13 +6,6 @@
 */
 
 #include "lemipc.h"
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/ipc.h>
-#include <sys/sem.h>
-#include <sys/shm.h>
-#include <time.h>
-#include <stdlib.h>
 
 int		create_semaphores(t_players *p)
 {

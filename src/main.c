@@ -5,9 +5,6 @@
 ** main.c
 */
 
-#include <sys/types.h>
-#include <sys/ipc.h>
-#include <unistd.h>
 #include "lemipc.h"
 
 int			main(int ac, char **av)
