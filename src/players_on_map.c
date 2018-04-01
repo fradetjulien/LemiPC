@@ -26,7 +26,9 @@ int		players_on_map(t_players *p, int **map)
 		p->orderly = rand() % WIDTH_MAP;
 	}
 	if (is_free(p, map) == 0) {
+		lock(p->sem_id);
 		map[p->abscissa][p->orderly] = p->team_id;
+		unlock(p->sem_id);
 	}
 	return (0);
 }

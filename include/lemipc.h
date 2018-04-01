@@ -34,6 +34,8 @@ int		parser(int ac, char **av);
 int		create_semaphores(t_players *p);
 int		players_on_map(t_players *p, int **map);
 int		launch_game(int **map, t_players *p);
+int		lock(int sem_id);
+int		unlock(int sem_id);
 void		flag_help(char **av);
 void		my_showtab(int **map);
 void		shifting_zero(int **map, int abscissa, int orderly, int player);

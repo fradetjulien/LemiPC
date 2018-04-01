@@ -27,6 +27,8 @@ SRCS	= src/flag_help.c		\
 	  src/my_showtab.c		\
 	  src/browse_map.c		\
 	  src/shifting.c		\
+	  src/lock.c			\
+	  src/unlock.c			\
           main.c
 
 OBJS	= $(SRCS:.c=.o)

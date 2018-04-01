@@ -18,7 +18,6 @@ int			**set_all(char **av, t_players *p)
 	map = set_map(p);
 	if (map == NULL)
 		return (NULL);
-	create_semaphores(p);
 	players_on_map(p, map);
 	if (launch_game(map, p) == -1) {
                 return (NULL);

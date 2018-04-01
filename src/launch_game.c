@@ -10,9 +10,11 @@
 
 int		**delete_position(int **map, t_players *p)
 {
+	lock(p->sem_id);
 	if (map[p->abscissa][p->orderly] == p->sem_id) {
 		map[p->abscissa][p->orderly] = 0;
 	}
+	unlock(p->sem_id);
 	return (map);
 }
 
@@ -40,7 +42,7 @@ int		launch_game(int **map, t_players *p)
 	int	time = 0;
 	int	nb_players = 1;
 
-	while (time <= 60 && nb_players > 0) {
+	while (time <= 60 && nb_players > 1) {
 		nb_players = alive_players(map);
 		map = delete_position(map, p);
 		map = browse_map(map);
