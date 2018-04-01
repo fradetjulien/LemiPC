@@ -41,6 +41,7 @@ int			launch_game(int **map, t_players *p)
 	int		nb_players = 2;
 	struct shmid_ds	remaining_players;
 
+	my_showtab(map);
 	while (nb_players > 1) {
 		nb_players = alive_players(map);
 		map = delete_position(map, p);
@@ -49,7 +50,6 @@ int			launch_game(int **map, t_players *p)
 		unlock(p->sem_id);
 		usleep(3000);
 	}
-	my_showtab(map);
 	shmctl(p->shm_id, IPC_STAT, &remaining_players);
 	if (remaining_players.shm_nattch < 3)
 		end(p);

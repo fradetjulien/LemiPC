@@ -30,13 +30,3 @@ int		**move_player(int **map, t_players *p)
 	}
 	return (map);
 }
-
-/*	ptrf[0] = &shifting_zero;
-	ptrf[1] = &shifting_one;
-	ptrf[2] = &shifting_two;
-	ptrf[3] = &shifting_three;
-	ptrf[4] = &shifting_four;
-	ptrf[5] = &shifting_five;
-	while(possibility[++i] != move && possibility[i]);
-	if (move == possibility[i])
-	ptrf[i](&map, abscissa, orderly, player);*/
