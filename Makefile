@@ -9,7 +9,7 @@ CC	= gcc
 
 RM	= rm -f
 
-CFLAGS	= -g -W -Wall -Wextra
+CFLAGS	= -W -Wall -Wextra
 
 CFLAGS  += -I include/
 

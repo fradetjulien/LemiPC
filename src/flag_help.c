@@ -9,8 +9,8 @@
 
 void		flag_help(char **av)
 {
-	printf("USAGE\n\t%s PATH TEAM_NUMBER\n\n"
-	       "DESCRIPTION\n\tPATH\tpath you'll give to ftok\n"
-	       "\tTEAM_NUMBER\tteam number of the current champion "
-	       "(greater than 0)\n", av[0]);
+	printf("USAGE\n\t%s PATH TEAM_NUMBER\n\n", av[0]);
+	printf("DESCRIPTION\n\tPATH\tpath you'll give to ftok\n");
+	printf("\tTEAM_NUMBER\tteam number of the current champion ");
+	printf("(greater than 0)\n");
 }

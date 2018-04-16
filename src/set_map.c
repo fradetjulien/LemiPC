@@ -56,13 +56,11 @@ int		**set_map(t_players *p)
 	p->shm_id = shmget(p->key, (HEIGHT_MAP * WIDTH_MAP), SHM_R | SHM_W);
 	if (p->shm_id == -1) {
 		p->shm_id = shmget(p->key, (HEIGHT_MAP * WIDTH_MAP), IPC_CREAT |SHM_R | SHM_W);
-		create_semaphores(p);
 		map = shmat(p->shm_id, NULL, SHM_R | SHM_W);
 		map = initialisation_map(map);
 		if (map == NULL)
 			return (NULL);
-	}
-	else {
+	} else {
 		map = shmat(p->shm_id, NULL, SHM_R | SHM_W);
 		map = fillup_map(map);
 		if (map == NULL)

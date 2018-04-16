@@ -37,9 +37,9 @@ int		**shifting_two(int **map, t_players *p, int player)
 
 int		**shifting_three(int **map, t_players *p, int player)
 {
-        if (p->abscissa > 0) {
-                p->abscissa--;
-        }
-        map[p->abscissa][p->orderly] = player;
+	if (p->abscissa > 0) {
+		p->abscissa--;
+	}
+	map[p->abscissa][p->orderly] = player;
 	return (map);
 }

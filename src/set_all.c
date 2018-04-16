@@ -13,13 +13,14 @@ int			**set_all(char **av, t_players *p)
 
 	p = create_players(av, p);
 	if (p == NULL)
-	  return (NULL);
+		return (NULL);
+	create_semaphores(p);
 	map = set_map(p);
 	if (map == NULL)
 		return (NULL);
 	players_on_map(p, map);
 	if (launch_game(map, p) == -1) {
-                return (NULL);
+		return (NULL);
 	}
 	return (map);
 }
