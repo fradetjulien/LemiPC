@@ -21,4 +21,5 @@ void		my_showtab(int **map)
 		y = 0;
 		x++;
 	}
+	printf("\n");
 }

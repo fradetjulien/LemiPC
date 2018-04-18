@@ -19,8 +19,8 @@
 #include <stdio.h>
 #include <time.h>
 
-# define HEIGHT_MAP	20
-# define WIDTH_MAP	20
+# define HEIGHT_MAP	10
+# define WIDTH_MAP	10
 
 typedef struct	s_players
 {
@@ -30,6 +30,7 @@ typedef struct	s_players
 	int	team_id;
 	int	abscissa;
 	int	orderly;
+	int	order;
 	key_t	key;
 }		t_players;
 
