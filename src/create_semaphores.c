@@ -7,7 +7,7 @@
 
 #include "lemipc.h"
 
-int		create_semaphores(t_players *p)
+void		create_semaphores(t_players *p)
 {
 	p->sem_id = semget(p->key, 1, SHM_R | SHM_W);
 	if (p->sem_id == -1) {
@@ -22,5 +22,5 @@ int		create_semaphores(t_players *p)
 	srand(time(NULL));
 	p->abscissa = rand() % HEIGHT_MAP;
 	p->orderly = rand() % WIDTH_MAP;
-	return (0);
+	printf("Player created, belong to Team %d\n", p->team_id);
 }

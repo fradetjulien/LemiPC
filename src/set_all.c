@@ -15,6 +15,7 @@ int			**set_all(char **av, t_players *p)
 	if (p == NULL)
 		return (NULL);
 	create_semaphores(p);
+	init_messageQ(p);
 	map = set_map(p);
 	if (map == NULL)
 		return (NULL);

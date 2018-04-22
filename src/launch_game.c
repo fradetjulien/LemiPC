@@ -54,8 +54,7 @@ int			launch_game(int **map, t_players *p)
 		sleep(1);
 	}
 	shmctl(p->shm_id, IPC_STAT, &remaining_players);
-	if (remaining_players.shm_nattch < 3) {
+	if (remaining_players.shm_nattch < 3)
 		end(p);
-	}
 	return (0);
 }

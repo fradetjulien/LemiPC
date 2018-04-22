@@ -7,6 +7,33 @@
 
 #include "lemipc.h"
 
+void		send_position(t_players *p, char *pos)
+{
+	t_msg	msg;
+
+	msg.mtype = 2;
+	msg.mtext[0] = pos[0];
+	msg.mtext[1] = pos[1];
+	msgsnd(p->msg_id, &msg, sizeof(t_msg), 0);
+}
+
+char		*search_ennemy(t_players *p)
+{
+	t_msg	msg;
+	int	msg_rcd = 0;
+	char	*coordonnees = malloc(2);
+
+	if (coordonnees == NULL) {
+		return (NULL);
+	}
+	msg_rcd = msgrcv(p->msg_id, &msg, sizeof(msg), p->team_id, IPC_NOWAIT);
+	if (msg_rcd == -1) {
+		coordonnees[0] = msg.mtext[0];
+		coordonnees[1] = msg.mtext[1];
+	}
+	return (coordonnees);
+}
+
 int		**move_player(int **map, t_players *p)
 {
 	int	player = 0;
